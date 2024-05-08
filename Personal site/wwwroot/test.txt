@@ -1,0 +1,7 @@
+﻿namespace Personal_site.wwwroot
+{
+    public class test
+    {
+
+    }
+}
