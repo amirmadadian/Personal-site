@@ -49,13 +49,41 @@ namespace Personal_site.Controllers
 
 		//file result 
 
-		public FileResult Index()
-		{
-			//return File("~/test.txt", "text/html");
-			var fileByte = System.IO.File.ReadAllBytes("wwwroot/test.txt");
-			const string filename = "testFile.txt";
-			return File(fileByte, MediaTypeNames.Text.Plain, filename);
-		}
+		//public FileResult Index()
+		//{
+		//	//return File("~/test.txt", "text/html");
+		//	var fileByte = System.IO.File.ReadAllBytes("wwwroot/test.txt");
+		//	const string filename = "testFile.txt";
+		//	return File(fileByte, MediaTypeNames.Text.Plain, filename);
+		//}
 
+		//----------------------------------------
+
+		//json result
+
+		//public JsonResult Index()
+		//{
+		//	return Json(new { 
+		//		id = 12, 
+		//		name = "amir hossein",
+		//		job = "electrical engineer & programmer"
+		//	});
+		//}
+
+		//end json
+
+		public javascriptresult Index()
+		{
+			return new javascriptresult("alert('bienvnue')");
+		}
+	}
+
+	public class javascriptresult :ContentResult
+	{
+		public javascriptresult(string data)
+		{
+			Content = data;
+			ContentType = "application/javascript";
+		}
 	}
 }
