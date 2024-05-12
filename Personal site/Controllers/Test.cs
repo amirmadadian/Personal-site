@@ -76,6 +76,42 @@ namespace Personal_site.Controllers
 		{
 			return new javascriptresult("alert('bienvnue')");
 		}
+
+		//------------------------------------------------
+
+		//redirect to another page like google or site
+
+		//public RedirectResult Index()
+		//{
+		//	return Redirect("http:/www.google.com");
+		//}
+
+		//end
+		//-------------------------------------------------------
+
+		//public RedirectToActionResult Index()
+		//{
+		//	return RedirectToAction("Index", "Home");
+		//}
+
+		//-----------------------------------------
+
+		//https status code result
+
+		//public IActionResult Index()
+		//{
+		//	//return new OkResult();
+		//	//return new NotFoundResult();
+		//	//return new BadRequestResult();
+		//	//return new NoContentResult();
+		//	//return new StatusCodeResult(86959);
+		//	return new UnauthorizedResult();
+		//}
+
+		//end
+
+		//------------------------------------------
+
 	}
 
 	public class javascriptresult :ContentResult
