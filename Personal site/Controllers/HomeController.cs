@@ -34,10 +34,19 @@ namespace Personal_site.Controllers
 		//}
 
 		[HttpPost]
-		public JsonResult Contact(Contact form)
+		public IActionResult Contact(Contact model)
 		{
-			Console.WriteLine(form.ToString());
-			return Json(Ok(form));
+
+			//if(ModelState.IsValid==false) { }
+			if(!ModelState.IsValid)
+			{
+				ViewBag.error = "لطفا اطلاعات وارد شده را بررسی کنید ";
+				return View(model);
+			}
+			ViewBag.success = "نظرشما با موفقیت ثبت شد ";
+			return View();
+			//return RedirectToAction("Index");
+			
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
