@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace Personal_site.Models
 {
@@ -12,6 +13,7 @@ namespace Personal_site.Models
 		[EmailAddress(ErrorMessage ="ایمیل وارد شده صحیح نمی باشد ")]
         public string Email { get; set; }
         public string Message { get; set; }
-        public string Service { get; set; }
+        public int Service { get; set; }
+        public SelectList Services { get; set; }
     }
 }
